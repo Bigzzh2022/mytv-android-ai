@@ -16,8 +16,10 @@ object Constants {
 
     /**
      * IPTV源地址
+     *
+     * 不再内置默认直播源，未配置时由界面引导用户前往设置页或网页配置。
      */
-    const val IPTV_SOURCE_URL = "http://1.2.3.4/live.m3u"
+    const val IPTV_SOURCE_URL = ""
 
     /**
      * IPTV源缓存时间（毫秒）

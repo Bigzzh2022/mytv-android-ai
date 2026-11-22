@@ -56,6 +56,10 @@ class IptvRepository : FileCacheRepository("iptv.txt") {
         cacheTime: Long,
         simplify: Boolean = false,
     ): IptvGroupList {
+        if (sourceUrl.isBlank()) {
+            throw Exception("尚未配置直播源，请通过网页设置或电视端设置添加直播源")
+        }
+
         try {
             val sourceData = getOrRefresh(cacheTime) {
                 fetchSource(sourceUrl)
